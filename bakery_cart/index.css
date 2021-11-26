@@ -26,6 +26,11 @@ a {
   display: flex;
   justify-content: space-between;
 }
+
+.components{
+    display: flex;
+    flex-direction: column;
+}
 .row.center {
   align-items: center;
 }

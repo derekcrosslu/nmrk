@@ -7,13 +7,15 @@ import data from "../api/bakery_problem_data.json";
 function App() {
     const { treats } = data;
     
-    return <div>
+    return (
+      <div>
         <Header></Header>
-        <div className='row center block'>
-            <Main treats={treats}></Main>
-            <Basket></Basket>
+        <div className="components">
+          <Main treats={treats}></Main>
+          <Basket></Basket>
         </div>
-    </div>
+      </div>
+    );
 }
 
 export default App
