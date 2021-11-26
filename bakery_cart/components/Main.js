@@ -1,7 +1,7 @@
 import Treat from './Treat'
 export default function Main(props) {
     
-    const { treats } = props;
+    const { treats, addToCart } = props;
 
 
 
@@ -9,7 +9,13 @@ export default function Main(props) {
         <h2>Treats</h2>
         <div className="row">
             {treats.map((treat) => {
-                return <Treat key={treat.id} treat={treat}></Treat>
+                return (
+                  <Treat
+                    key={treat.id}
+                    treat={treat}
+                    addToCart={addToCart}
+                  ></Treat>
+                );
             })}
         </div>
     </main>)
