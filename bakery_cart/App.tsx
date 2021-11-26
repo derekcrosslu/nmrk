@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Basket from "./components/Basket";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -6,13 +7,14 @@ import data from "../api/bakery_problem_data.json";
 
 function App() {
     const { treats } = data;
+    const [cartItems,setCartItems] = useState([])
     
     return (
       <div>
         <Header></Header>
         <div className="components">
           <Main treats={treats}></Main>
-          <Basket></Basket>
+          <Basket cartItems={cartItems}></Basket>
         </div>
       </div>
     );
