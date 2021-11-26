@@ -1,5 +1,5 @@
 export default function Treat(props) {
-    const { treat, addToCart } = props;
+    const { treat, addToCart, removeFromCart } = props;
 
     const item = 0
   return (
@@ -9,6 +9,7 @@ export default function Treat(props) {
       <div>${treat.price}</div>
       <div>
         <button onClick={() => addToCart(treat)}>Add to Cart</button>
+        <button onClick={() => removeFromCart(treat)}>Remove from Cart</button>
       </div>
     </div>
   );

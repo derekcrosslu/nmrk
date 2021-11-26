@@ -1,7 +1,7 @@
 import Treat from './Treat'
 export default function Main(props) {
     
-    const { treats, addToCart } = props;
+    const { treats, addToCart, removeFromCart } = props;
 
 
 
@@ -14,6 +14,7 @@ export default function Main(props) {
                     key={treat.id}
                     treat={treat}
                     addToCart={addToCart}
+                    removeFromCart={removeFromCart}
                   ></Treat>
                 );
             })}

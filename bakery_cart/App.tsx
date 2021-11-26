@@ -16,13 +16,33 @@ function App() {
             setCartItems([...cartItems,{...treat,qty:1}])
         }
     }
+    const removeFromCart = (treat) => {
+        console.log(treat,'remove fun');
+        
+        const itemInCart = cartItems.find(item => item.id === treat.id)
+        if (itemInCart.qty) {
+            setCartItems(cartItems.filter(item=>item.id!==treat.id))
+        } else {
+            setCartItems(
+              cartItems.map((item) =>
+                item.id === treat.id
+                  ? { ...itemInCart, qty: itemInCart.qty - 1 }
+                  : item
+              )
+            );
+        }
+    }
     
     return (
       <div>
         <Header></Header>
         <div className="components">
-          <Main treats={treats} addToCart={addToCart}></Main>
-          <Basket cartItems={cartItems}></Basket>
+          <Main
+            treats={treats}
+            addToCart={addToCart}
+            removeFromCart={removeFromCart}
+          ></Main>
+          <Basket cartItems={cartItems}> </Basket>
         </div>
       </div>
     );
