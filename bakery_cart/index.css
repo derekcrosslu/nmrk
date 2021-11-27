@@ -28,22 +28,24 @@ a {
 }
 .row.max {
   max-width: 13rem;
-  height: 1.5rem;
+  height: 1.8rem;
 }
 .first_col {
   width: 3rem;
+  font-size: 0.9rem;
 }
 .mid_col {
   width: 3rem;
   text-align: end;
+  font-size: 0.9rem;
 }
 .third_col {
   width: 3rem;
   text-align: end;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 .total_price {
-  margin-top: 3rem;
+  margin-top: 1.8rem;
   color: rgb(9, 9, 39);
   /* display: flex; */
  
@@ -66,10 +68,10 @@ a {
   flex: 2;
 }
 .block {
-  padding: 0.7rem;
-  margin: 0.5rem;
+  padding: 0.8rem;
+  margin: 0.4rem;
   border-radius: 0.5rem;
-  width: 41.5rem;
+  width: 41rem;
 }
 .main_color {
   background-color: #f04040;
@@ -77,7 +79,7 @@ a {
   justify-content: space-between;
 }
 .main_subsection_1 {
-  min-width: 15rem;
+  min-width: 14rem;
   display: flex;
   flex-direction: column;
 }
@@ -98,7 +100,7 @@ a {
 }
 
 .main_subsection_2 {
-  min-width: 10rem;
+  min-width: 10.2rem;
   display: flex;
   flex-direction: column;
 }
@@ -108,13 +110,24 @@ a {
 }
 
 .main_subsection_3 {
-  min-width: 15rem;
+  min-width: 15.2rem;
+  min-height: 15;
+  justify-content: stretch;
 }
 .text-right {
   text-align: right;
 }
 img.small {
-  max-height: 8rem;
+   max-height: 8rem;
+  max-width: 8rem;
+  min-width: 8rem;
+  min-height: 8rem;
+}
+img {
+  max-height: 14.5rem;
+  max-width: 14.5rem;
+  min-width: 14.5rem;
+  min-height: 14.5rem;
 }
 button {
   font-size: 0.8rem;
@@ -139,4 +152,14 @@ button.badge {
   border: none;
   color: #ffffff;
   width: 1.5rem;
+}
+.hoverbutton .hoverbuttonon,
+.hoverbutton:hover .hoverbuttonoff {
+  display: none;
+  background-color: #f04040;
+}
+
+.hoverbutton:hover .hoverbuttonon {
+  display: inline;
+  background-color: #f0e440;
 }
