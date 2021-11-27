@@ -10,6 +10,7 @@ function App() {
   const { treats } = data;
   const [cartItems, setCartItems] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
+console.log(cartItems);
 
   const addToCart = (treat) => {
     const itemInCart = cartItems.find((item) => item.id === treat.id);
