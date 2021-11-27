@@ -1,5 +1,5 @@
 body {
-  font-family: 'Helvetica';
+  font-family: "Helvetica";
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,21 +26,35 @@ a {
   display: flex;
   justify-content: space-between;
 }
-.row.max{
-    max-width: 13rem;
+.row.max {
+  max-width: 13rem;
+  height: 1.5rem;
 }
-.first_col{
-    width: 3rem;
+.first_col {
+  width: 3rem;
+}
+.mid_col {
+  width: 3rem;
+  text-align: end;
+}
+.third_col {
+  width: 3rem;
+  text-align: end;
+  font-size: 1rem;
+}
+.total_price {
+  margin-top: 3rem;
+  color: rgb(9, 9, 39);
+  /* display: flex; */
+ 
+ 
+  width: 100%;
 
+  /* position: fixed; */
 }
-.mid_col{
-   
-    width: 3rem;
-    text-align:end;
-}
-.components{
-    display: flex;
-    flex-direction: column;
+.components {
+  display: flex;
+  flex-direction: column;
 }
 .row.center {
   align-items: center;
@@ -57,44 +71,44 @@ a {
   border-radius: 0.5rem;
   width: 41.5rem;
 }
-.main_color{
-    background-color: #f04040;
-    display: flex;
-    justify-content: space-between;
+.main_color {
+  background-color: #f04040;
+  display: flex;
+  justify-content: space-between;
 }
-.main_subsection_1{
-    min-width: 15rem;
-        display: flex;
-    flex-direction: column;
+.main_subsection_1 {
+  min-width: 15rem;
+  display: flex;
+  flex-direction: column;
 }
-.main_sub1_head{
-    color:white;
-    height: 2rem;
-    text-align:center;
-    font-size: 1.5rem;
-    font-weight: bold;
+.main_sub1_head {
+  color: white;
+  height: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
-.main_sub1_basket{
-    color:white;
-    height: 10rem;
-    background-color: #db967b;
-    border-radius: 10%;
-    padding: 1.5rem;
-}
-
-.main_subsection_2{
-    min-width: 10rem;
-    display: flex;
-    flex-direction: column;
-    
-}
-.main_sub2_discount{
-    background-color: #f9faf6;
-    height: 2.8rem;
+.main_sub1_basket {
+  color: rgb(65, 62, 62);
+  height: 10rem;
+  background-color: #db967b;
+  border-radius: 10%;
+  padding: 1.5rem;
+  row-gap: 1rem;
 }
 
-.main_subsection_3{
-    min-width: 15rem;
+.main_subsection_2 {
+  min-width: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+.main_sub2_discount {
+  background-color: #f9faf6;
+  height: 2.8rem;
+}
+
+.main_subsection_3 {
+  min-width: 15rem;
 }
 .text-right {
   text-align: right;
@@ -126,4 +140,3 @@ button.badge {
   color: #ffffff;
   width: 1.5rem;
 }
-

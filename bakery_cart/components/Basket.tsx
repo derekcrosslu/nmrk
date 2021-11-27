@@ -79,24 +79,34 @@ export default function Basket(props) {
         <div className="row max">
           <div className="first_col">Brownies</div>
           <div className="mid_col">{totalItemQty(cartItems, 1)}</div>
-          <div>{totalItemPrice(cartItems, 1)}</div>
+          <div className="third_col">
+            $ {totalItemPrice(cartItems, 1).toFixed(2)}
+          </div>
         </div>
         <div className="row max">
           <div className="first_col">Cheesecakes</div>
           <div className="mid_col">{totalItemQty(cartItems, 2)}</div>
-          <div>{totalItemPrice(cartItems, 2)}</div>
+          <div className="third_col">
+            $ {totalItemPrice(cartItems, 2).toFixed(2)}
+          </div>
         </div>
         <div className="row max">
           <div className="first_col">Cookies</div>
           <div className="mid_col">{totalItemQty(cartItems, 3)}</div>
-          <div>{totalItemPrice(cartItems, 3)}</div>
+          <div className="third_col">
+            $ {totalItemPrice(cartItems, 3).toFixed(2)}
+          </div>
         </div>
         <div className="row max">
           <div className="first_col">Donuts</div>
           <div className="mid_col">{totalItemQty(cartItems, 4)}</div>
-          <div>{totalItemPrice(cartItems, 4)}</div>
+          <div className="third_col">
+            $ {totalItemPrice(cartItems, 4).toFixed(2)}
+          </div>
         </div>
-        <div className="row max">Total Price {totalPrice}</div>
+        <div className="row max total_price">
+          <h3>Total Price</h3> <h3>$ {totalPrice.toFixed(2)}</h3>
+        </div>
       </div>
     </div>
   );
