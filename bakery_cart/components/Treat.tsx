@@ -15,7 +15,7 @@ export default function Treat(props) {
           </button>
         </div>
         <div className="treat_text">
-          <div>${treat.price}</div>
+          <div>${treat.price.toFixed(2)}</div>
           <h3>{treat.name}</h3>
         </div>
       </div>

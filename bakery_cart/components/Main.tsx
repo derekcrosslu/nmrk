@@ -1,45 +1,65 @@
 import { useState } from "react";
 import DatePicker, { CalendarContainer } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Basket from './Basket'
+import Basket from "./Basket";
 
 export default function Main(props) {
-  const { setSelectedDate, selectedDate, cartItems } = props;
- 
-  const [showDiscount, setShowDiscount] = useState('')
-  const Dp =()=> <DatePicker
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          dateFormat="MM/dd/yyy"
-          minDate={new Date()}
-          inline
-          // calendarContainer={MyContainer}
-        />
+  const { setSelectedDate, selectedDate, cartItems, treats } = props;
+
+  const [showDiscount, setShowDiscount] = useState("");
+  const MyContainer = ({ className, children }) => {
+    return (
+      <div style={{ blockSize:'15rem',blockOverflow:'true' }}>
+        <CalendarContainer className={className}>
+          <div style={{ background: "red", color: "red" }}></div>
+          <div style={{ position: "relative" }}>{children}</div>
+        </CalendarContainer>
+      </div>
+    );
+  };
+  const Dp = () => (
+    <DatePicker
+      selected={selectedDate}
+      onChange={(date) => setSelectedDate(date)}
+      dateFormat="MM/dd/yyy"
+      minDate={new Date()}
+      inline
+      calendarContainer={MyContainer}
+      // calendarContainer={MyContainer}
+    />
+  );
   const handleShowDiscount = () => {
-    if (showDiscount === '') {
-      return <Dp />
+    if (showDiscount === "") {
+      return <Dp />;
     }
-    if (showDiscount === 'fridays') {
-      const [item] = cartItems.filter(item => item.id === 3);
-      return !item ? <Dp /> : <img src={item.imageURL} />
+    if (showDiscount === "fridays") {
+      const [item] = treats.filter((item) => item.id === 3);
+      return !item ? <Dp /> : <img src={item.imageURL} />;
     }
     if (showDiscount === "tuesdays") {
-      const [item] = cartItems.filter((item) => item.id === 4);
+      const [item] = treats.filter((item) => item.id === 4);
       return !item ? <Dp /> : <img src={item.imageURL} />;
     }
     if (showDiscount === "oct1") {
-      const [item] = cartItems.filter((item) => item.id === 2);
-      return !item ? <Dp /> : <img src={item.imageURL} />;
+      const [item] = treats.filter((item) => item.id === 2);
+      return item ? <Dp /> : <img src={item.imageURL} />;
     }
     if (showDiscount === "bulkCookies") {
-      const [item] = cartItems.filter((item) => item.id === 3);
+      const [item] = treats.filter((item) => item.id === 3);
       return !item ? <Dp /> : <img src={item.imageURL} />;
     }
     if (showDiscount === "bulkBrownies") {
-      const [item] = cartItems.filter((item) => item.id === 1);
+      const [item] = treats.filter((item) => item.id === 1);
       return !item ? <Dp /> : <img src={item.imageURL} />;
     }
-  }
+  };
+
+  const handleClickDiscount = (value) => {
+    setShowDiscount(value);
+    if (value === "oct1") {
+      setSelectedDate(new Date(2022, 9, 1));
+    }
+  };
 
   return (
     <header className="row block center main_color">
@@ -54,13 +74,13 @@ export default function Main(props) {
         <div className="hoverbutton">
           <button
             className="main_sub2_discount hoverbuttonon"
-            onClick={() => setShowDiscount("fridays")}
+            onClick={() => handleClickDiscount("fridays")}
           >
             Cookies 8 for $6.00!
           </button>
           <button
             className="main_sub2_discount hoverbuttonoff"
-            onClick={() => setShowDiscount("fridays")}
+            onClick={() => handleClickDiscount("fridays")}
           >
             Friday's Sale!
           </button>
@@ -68,11 +88,13 @@ export default function Main(props) {
         <div className="hoverbutton">
           <button
             className="main_sub2_discount hoverbuttonon"
-            onClick={() => setShowDiscount("tuesdays")}
-          >Ginger Bread Donut's 2x1!</button>
+            onClick={() => handleClickDiscount("tuesdays")}
+          >
+            Ginger Bread Donut's 2x1!
+          </button>
           <button
             className="main_sub2_discount hoverbuttonoff"
-            onClick={() => setShowDiscount("tuesdays")}
+            onClick={() => handleClickDiscount("tuesdays")}
           >
             Tuesday's Sale!
           </button>
@@ -80,11 +102,13 @@ export default function Main(props) {
         <div className="hoverbutton">
           <button
             className="main_sub2_discount hoverbuttonon"
-            onClick={() => setShowDiscount("oct1")}
-          >Cheescake 25% OFF!</button>
+            onClick={() => handleClickDiscount("oct1")}
+          >
+            Cheescake 25% OFF!
+          </button>
           <button
             className="main_sub2_discount hoverbuttonoff"
-            onClick={() => setShowDiscount("oct1")}
+            onClick={() => handleClickDiscount("oct1")}
           >
             October 1st Sale!
           </button>
@@ -93,11 +117,13 @@ export default function Main(props) {
         <div className="hoverbutton">
           <button
             className="main_sub2_discount hoverbuttonon"
-            onClick={() => setShowDiscount("bulkCookies")}
-          >Cookies 8 for $6.00!</button>
+            onClick={() => handleClickDiscount("bulkCookies")}
+          >
+            Cookies 8 for $6.00!
+          </button>
           <button
             className="main_sub2_discount hoverbuttonoff"
-            onClick={() => setShowDiscount("bulkCookies")}
+            onClick={() => handleClickDiscount("bulkCookies")}
           >
             Cookies Sale!
           </button>
@@ -105,11 +131,13 @@ export default function Main(props) {
         <div className="hoverbutton">
           <button
             className="main_sub2_discount hoverbuttonon"
-            onClick={() => setShowDiscount("bulkBrownies")}
-          >Brownies  4 for $7.00!</button>
+            onClick={() => handleClickDiscount("bulkBrownies")}
+          >
+            Brownies 4 for $7.00!
+          </button>
           <button
             className="main_sub2_discount hoverbuttonoff"
-            onClick={() => setShowDiscount("bulkBrownies")}
+            onClick={() => handleClickDiscount("bulkBrownies")}
           >
             Brownies Sale!
           </button>

@@ -48,6 +48,8 @@ function App() {
         setSelectedDate={setSelectedDate}
         selectedDate={selectedDate}
         cartItems={cartItems}
+        treats={treats}
+        addToCart={addToCart}
       ></Main>
       <div className="components">
         {/* passing adding and removing props to each item */}
