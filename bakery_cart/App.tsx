@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Basket from "./components/Basket";
-import Header from "./components/Header";
 import Main from "./components/Main";
+import Treats from "./components/Treats";
 import "./index.css";
 import data from "../api/bakery_problem_data.json";
 
@@ -10,7 +10,6 @@ function App() {
   const { treats } = data;
   const [cartItems, setCartItems] = useState([]);
   const [selectedDate, setSelectedDate] = useState(new Date());
-console.log(cartItems);
 
   const addToCart = (treat) => {
       const itemInCart = cartItems.find((item) => item.id === treat.id);
@@ -24,8 +23,6 @@ console.log(cartItems);
         )
       );
     } else {
-        
-        
       setCartItems([...cartItems, { ...treat, qty: 1 }]);
     }
   };
@@ -45,21 +42,20 @@ console.log(cartItems);
   };
 
   return (
-      <div>
-      {/*     I included the datepicker in header component */}
-      <Header
+    <div>
+      {/*     I included the datepicker in Main component */}
+      <Main
         setSelectedDate={setSelectedDate}
         selectedDate={selectedDate}
-      ></Header>
-          <div className="components">
-               {/* passing adding and removing props to each item */}
-        <Main
+        cartItems={cartItems}
+      ></Main>
+      <div className="components">
+        {/* passing adding and removing props to each item */}
+        <Treats
           treats={treats}
           addToCart={addToCart}
           removeFromCart={removeFromCart}
-              ></Main>
-               {/* passing the selected cart items and selected date to basket component */}
-        <Basket cartItems={cartItems} selectedDate={selectedDate}></Basket>
+        ></Treats>
       </div>
     </div>
   );

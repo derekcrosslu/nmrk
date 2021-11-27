@@ -26,7 +26,18 @@ a {
   display: flex;
   justify-content: space-between;
 }
+.row.max{
+    max-width: 13rem;
+}
+.first_col{
+    width: 3rem;
 
+}
+.mid_col{
+   
+    width: 3rem;
+    text-align:end;
+}
 .components{
     display: flex;
     flex-direction: column;
@@ -41,16 +52,49 @@ a {
   flex: 2;
 }
 .block {
-  padding: 1rem;
+  padding: 0.7rem;
   margin: 0.5rem;
   border-radius: 0.5rem;
-  width: 30rem;
-}
-.header_color{
-    background-color: #f04040;
+  width: 41.5rem;
 }
 .main_color{
-    background-color: #e0e0e0;
+    background-color: #f04040;
+    display: flex;
+    justify-content: space-between;
+}
+.main_subsection_1{
+    min-width: 15rem;
+        display: flex;
+    flex-direction: column;
+}
+.main_sub1_head{
+    color:white;
+    height: 2rem;
+    text-align:center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.main_sub1_basket{
+    color:white;
+    height: 10rem;
+    background-color: #db967b;
+    border-radius: 10%;
+    padding: 1.5rem;
+}
+
+.main_subsection_2{
+    min-width: 10rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+.main_sub2_discount{
+    background-color: #f9faf6;
+    height: 2.8rem;
+}
+
+.main_subsection_3{
+    min-width: 15rem;
 }
 .text-right {
   text-align: right;
@@ -82,3 +126,4 @@ button.badge {
   color: #ffffff;
   width: 1.5rem;
 }
+

@@ -8,8 +8,12 @@ export default function Treat(props) {
       <h3>{treat.name}</h3>
       <div>${treat.price}</div>
       <div>
-        <button onClick={() => addToCart(treat)}>Add to Cart</button>
-        <button onClick={() => removeFromCart(treat)}>Remove from Cart</button>
+        <button onClick={() => addToCart(treat)} className="add">
+          Add
+        </button>
+        <button onClick={() => removeFromCart(treat)} className="remove">
+          Remove
+        </button>
       </div>
     </div>
   );
