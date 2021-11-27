@@ -13,7 +13,8 @@ function App() {
 console.log(cartItems);
 
   const addToCart = (treat) => {
-    const itemInCart = cartItems.find((item) => item.id === treat.id);
+      const itemInCart = cartItems.find((item) => item.id === treat.id);
+      
     if (itemInCart) {
       setCartItems(
         cartItems.map((item) =>
@@ -23,12 +24,14 @@ console.log(cartItems);
         )
       );
     } else {
+        
+        
       setCartItems([...cartItems, { ...treat, qty: 1 }]);
     }
   };
   const removeFromCart = (treat) => {
     const itemInCart = cartItems.find((item) => item.id === treat.id);
-    if (itemInCart.qty) {
+    if (itemInCart) {
       setCartItems(cartItems.filter((item) => item.id !== treat.id));
     } else {
       setCartItems(
