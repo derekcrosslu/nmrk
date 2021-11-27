@@ -3,19 +3,8 @@ import DatePicker, { CalendarContainer } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function Header(props) {
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const MyContainer = ({ className, children }) => {
-    return (
-      <div style={{ padding: "16px", background: "#216ba5", color: "#fff" }}>
-        <CalendarContainer className={className}>
-          <div style={{ background: "#f0f0f0" }}>
-            What is your favorite day?
-          </div>
-          <div style={{ position: "relative" }}>{children}</div>
-        </CalendarContainer>
-      </div>
-    );
-  };
+  const { setSelectedDate, selectedDate } = props;
+ 
   // console.log(selectedDate.getDay()); // 10/21/22 //  5  (its a friday)
   // console.log(selectedDate.getMonth() + 1); // 10/21/22 // 10
   // console.log(selectedDate.getDate()); // 10/21/22 // 21
