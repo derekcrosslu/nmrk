@@ -17,6 +17,7 @@ export default function Main(props) {
       </div>
     );
   };
+  //wrapping DatePicker component to reuse it's instances without cluttering code
   const Dp = () => (
     <DatePicker
       selected={selectedDate}
@@ -90,7 +91,7 @@ export default function Main(props) {
             className="main_sub2_discount hoverbuttonon"
             onClick={() => handleClickDiscount("tuesdays")}
           >
-            Ginger Bread Donut's 2x1!
+            Donut's 2x1!
           </button>
           <button
             className="main_sub2_discount hoverbuttonoff"

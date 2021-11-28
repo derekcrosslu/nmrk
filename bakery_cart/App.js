@@ -3,7 +3,7 @@ import Basket from "./components/Basket";
 import Main from "./components/Main";
 import Treats from "./components/Treats";
 import "./index.css";
-import data from "./api/bakery_problem_data.json";
+import data from "./bakery_problem_data.json";
 
 function App() {
     // getting data from json file from now, when all works I will implement api calls
