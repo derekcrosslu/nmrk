@@ -107,6 +107,9 @@ export default function Basket(props) {
         <div className="row max total_price">
           <h3>Total Price</h3> <h3>$ {totalPrice.toFixed(2)}</h3>
         </div>
+        <div className="row max checkout">
+          <h3>CHECKOUT</h3>
+        </div>
       </div>
     </div>
   );
