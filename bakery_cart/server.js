@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const host = "localhost";
-const port = 9000;
+const port = 3001;
 const data = fs.readFileSync("bakery_problem_data.json");
 const requestListener = (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -12,6 +12,3 @@ const server = http.createServer(requestListener);
 server.listen(port, host, () => {
   console.log(`Server is running on http://${host}:${port}`);
 });
-
-// there was an extra character in json file that I had to fix 
-// in order for the API to work 

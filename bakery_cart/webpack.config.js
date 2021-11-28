@@ -28,7 +28,7 @@ const rules = [
   ruleForSVGandFonts,
 ];
 module.exports = {
-  entry: path.resolve(__dirname, ".", "./index.tsx"),
+  entry: path.resolve(__dirname, ".", "./index.js"),
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
