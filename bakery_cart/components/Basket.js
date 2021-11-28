@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+
+
+
 export default function Basket(props) {
   const { cartItems, selectedDate } = props;
   const [cartReady, setCartReady] = useState([{ id: 0, price: 0, qty: 0 }]);
@@ -42,6 +45,9 @@ export default function Basket(props) {
     }
   };
 
+
+  
+
   // first we map our cart items with their respective
   // const totalPrice = cartItems.map((a) => discountPrice(a.price, a.qty, a.id));
   // console.log(discountedItems, "discountedItems");
@@ -55,12 +61,12 @@ export default function Basket(props) {
   // finding the total quantity of items
   const totalQty = cartItems.reduce((a, c) => a + c.qty, 0);
 
-  const totalItemPrice = (cartItems,itemId) => {
+  const totalItemPrice = (cartItems, itemId) => {
     if (cartItems.length === 0) {
-      return 0
+      return 0;
     } else {
       const [item] = cartItems.filter((item) => item.id === itemId);
-      return !item ? 0 : discountPrice(item.price,item.qty,item.id);
+      return !item ? 0 : discountPrice(item.price, item.qty, item.id);
     }
   };
   const totalItemQty = (cartItems, itemId) => {
@@ -71,8 +77,7 @@ export default function Basket(props) {
       return !item ? 0 : item.qty;
     }
   };
-  
- 
+
   return (
     <div>
       <div>
