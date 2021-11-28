@@ -1,6 +1,6 @@
 # nmrk
 
-
+```
 git clone https://github.com/derekcrosslu/nmrk.git
 
 cd nmrk
@@ -20,3 +20,4 @@ npm run test
 
 
 Thanks! =)
+```
